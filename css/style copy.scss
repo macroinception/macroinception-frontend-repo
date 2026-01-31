@@ -90,6 +90,12 @@ $container-padding: $spacing-2xl;
   border-radius: $radius-lg;
   border: 1px solid $color-border;
   transition: all $transition-base;
+  // slider fix
+  min-height: 350px;
+  @media (max-width: 640px) {
+    min-height: 20px;
+  }
+  justify-content: space-between;
 
   &:hover {
     background: $color-bg-card-hover;
@@ -453,7 +459,11 @@ section {
 // ============================================
 // CARDS
 // ============================================
-
+.team {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -642,7 +652,11 @@ footer {
     margin: 0;
   }
 }
-
+.contact-cards {
+  .card {
+    padding: 1rem;
+  }
+}
 // ============================================
 // PAGE-SPECIFIC STYLES
 // ============================================
@@ -862,7 +876,11 @@ footer {
 
 .text-center {
   text-align: center;
-
+  .btn-outline {
+    @media (max-width: 640px) {
+      margin-left: 0 !important;
+    }
+  }
   p {
     margin-left: auto;
     margin-right: auto;
@@ -882,5 +900,678 @@ footer {
 
   @media (max-width: $breakpoint-md) {
     margin-bottom: $spacing-2xl;
+  }
+}
+// ============================================
+// SWIPER CUSTOM STYLES (NEW SECTION)
+// ============================================
+
+// .caseSwiper {
+//   // Add horizontal padding so the arrows have room to sit *outside* the cards
+//   &.swiper {
+//     padding-top: 10px;
+//   }
+//   padding: $spacing-xl $spacing-4xl $spacing-3xl $spacing-4xl;
+//   position: relative; // needed for absolute arrows
+
+//   @media (max-width: $breakpoint-md) {
+//     padding-left: $spacing-2xl;
+//     padding-right: $spacing-2xl;
+//   }
+
+//   .swiper-wrapper {
+//     align-items: stretch; // cards stretch to same height
+//   }
+
+//   .swiper-slide {
+//     height: auto;
+//     display: flex;
+//   }
+
+//   /* ---------- ARROWS ---------- */
+//   .swiper-button-next,
+//   .swiper-button-prev {
+//     // Make them visible
+//     color: #10b981;
+//     background: rgba(30, 41, 59, 0.9);
+//     border: 2px solid $color-border-light;
+//     border-radius: 50%;
+//     width: 44px;
+//     height: 44px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 10; // above everything
+//     top: 50%; // vertically centered
+//     transform: translateY(-50%);
+
+//     &:after {
+//       font-size: 1.2rem;
+//       font-weight: bold;
+//     }
+
+//     // Position **outside** the slider
+//     &.swiper-button-next {
+//       right: -22px;
+//     } // half of width
+//     &.swiper-button-prev {
+//       left: -22px;
+//     }
+
+//     @media (max-width: $breakpoint-md) {
+//       width: 36px;
+//       height: 36px;
+//       &.swiper-button-next {
+//         right: -18px;
+//       }
+//       &.swiper-button-prev {
+//         left: -18px;
+//       }
+//     }
+//   }
+
+//   /* ---------- PAGINATION ---------- */
+//   .swiper-pagination {
+//     bottom: 0;
+//     padding-bottom: $spacing-lg;
+//   }
+
+//   .swiper-pagination-bullet {
+//     background: #475569;
+//     opacity: 0.7;
+//     width: 10px;
+//     height: 10px;
+//     margin: 0 $spacing-xs;
+
+//     &-active {
+//       background: #10b981;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// Wrapper for the entire slider section - this is where arrows are positioned
+.caseSwiper-container {
+  padding: 0; // Space for arrows on desktop
+  position: relative; // Arrows positioned relative to this
+  overflow: visible;
+
+  // @media (max-width: $breakpoint-md) {
+  //   padding: 0 50px;
+  // }
+
+  // @media (max-width: $breakpoint-sm) {
+  //   padding: 0 10px;
+  // }
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    color: #10b981;
+    background: rgba(30, 41, 59, 0.9);
+    border: 2px solid #334155;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: #10b981;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &::after {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #10b981;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  .swiper-button-next {
+    right: -62px;
+    @media (max-width: 1236px) {
+      display: none;
+    }
+    @media (max-width: $breakpoint-md) {
+      right: 5px;
+      width: 44px;
+      height: 44px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      right: 0;
+      width: 36px;
+      height: 36px;
+
+      &::after {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    left: -62px;
+    @media (max-width: 1236px) {
+      display: none;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      left: 5px;
+      width: 44px;
+      height: 44px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      left: 0;
+      width: 36px;
+      height: 36px;
+
+      &::after {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.caseSwiper {
+  &.swiper {
+    padding-top: 10px;
+    overflow: hidden; // Constrain slides
+  }
+  padding: $spacing-xl 0 $spacing-3xl 0;
+  position: relative;
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto;
+    display: flex;
+
+    .card {
+      width: 100%;
+    }
+  }
+}
+
+/* ---------- PAGINATION ---------- */
+.swiper-pagination {
+  bottom: 0;
+  padding-bottom: $spacing-lg;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  background: #475569;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+  margin: 0 $spacing-xs;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  &-active {
+    background: #10b981;
+    opacity: 1;
+    width: 24px;
+    border-radius: 5px;
+  }
+}
+// responsive header-------------------------------------
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg $spacing-3xl;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $color-border-light;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $spacing-lg $spacing-xl;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-md $spacing-lg;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    // text-decoration: none;
+    // color: $color-text-primary;
+    // z-index: 1001;
+    flex-shrink: 0; // Prevent logo from shrinking
+    width: 132px;
+    height: 88px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      gap: $spacing-sm;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      background: $gradient-logo;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: $font-weight-bold;
+      font-size: 1.2rem;
+      color: white;
+      flex-shrink: 0;
+
+      @media (max-width: $breakpoint-md) {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+    }
+
+    div {
+      @media (max-width: 500px) {
+        display: none; // Hide text on very small screens
+      }
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: $color-text-primary;
+      white-space: nowrap;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1.1rem;
+      }
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: $color-text-muted;
+      margin: 0;
+      white-space: nowrap;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  // Desktop Navigation - Responsive until breakpoint
+  nav {
+    display: flex;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    // Gradually reduce gap as screen shrinks
+    @media (max-width: $breakpoint-xl) {
+      gap: $spacing-xl;
+    }
+
+    @media (max-width: 1100px) {
+      gap: $spacing-lg;
+    }
+
+    @media (max-width: 950px) {
+      gap: $spacing-md;
+    }
+
+    // Switch to mobile menu at 850px
+    @media (max-width: 850px) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      flex-direction: column;
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(20px);
+      padding-top: 90px;
+      gap: $spacing-xl;
+      align-items: flex-start;
+      transition: right $transition-base;
+      border-left: 1px solid $color-border-light;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+      margin-top: 0px !important;
+
+      &.active {
+        right: 0;
+      }
+      a {
+        padding: 0.7rem 18px !important;
+      }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 280px;
+    }
+
+    a {
+      color: $color-text-secondary;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+      transition: color $transition-base;
+      position: relative;
+      padding: $spacing-sm $spacing-md;
+      white-space: nowrap;
+      font-size: $font-size-sm;
+
+      // Reduce font size on smaller screens
+      @media (max-width: $breakpoint-xl) {
+        font-size: $font-size-sm;
+        padding: $spacing-sm $spacing-sm;
+      }
+
+      @media (max-width: 950px) {
+        font-size: 0.875rem;
+        padding: $spacing-xs $spacing-sm;
+      }
+
+      // Mobile menu styles
+      @media (max-width: 850px) {
+        font-size: 1.2rem;
+        padding: $spacing-md 0;
+        width: 100%;
+      }
+
+      &:hover {
+        color: $color-text-primary;
+      }
+
+      &.active {
+        color: #10b981;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: $spacing-md;
+          right: $spacing-md;
+          height: 2px;
+          background: #10b981;
+
+          @media (max-width: 850px) {
+            left: 0;
+            right: auto;
+            width: 3px;
+            height: 100%;
+            bottom: auto;
+            top: 0;
+          }
+        }
+      }
+
+      &.cta {
+        background: $gradient-logo;
+        color: white;
+        padding: $spacing-sm $spacing-xl;
+        border-radius: $radius-sm;
+        transition: all $transition-base;
+        width: 90%;
+        margin: 0 auto !important;
+
+        @media (max-width: $breakpoint-xl) {
+          padding: $spacing-sm $spacing-lg;
+        }
+
+        @media (max-width: 950px) {
+          padding: $spacing-xs $spacing-md;
+          font-size: 0.875rem;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+          color: white;
+        }
+
+        @media (max-width: 850px) {
+          margin-top: $spacing-lg;
+          text-align: center;
+          padding: $spacing-md $spacing-xl;
+          font-size: 1.1rem;
+        }
+
+        &::after {
+          display: none; // Remove active indicator from CTA
+        }
+      }
+    }
+  }
+
+  // Burger Menu Button - appears at 850px
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: $spacing-sm;
+    background: transparent;
+    border: none;
+    flex-shrink: 0;
+
+    @media (max-width: 850px) {
+      display: flex;
+    }
+
+    span {
+      width: 26px;
+      height: 3px;
+      background: #10b981;
+      border-radius: 2px;
+      transition: all $transition-base;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        // transform: rotate(45deg) translate(7px, 7px);
+        transform: rotate(45deg) translate(3px, 5px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+    }
+  }
+}
+
+// Overlay for mobile menu
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity $transition-base;
+
+  @media (max-width: 850px) {
+    display: block;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &:not(.active) {
+      pointer-events: none;
+    }
+  }
+}
+// services tech stack
+.tech-stack-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #6366f1, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.tech-card {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.8),
+    rgba(30, 41, 59, 0.4)
+  );
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+// .tech-card::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   height: 3px;
+//   background: linear-gradient(90deg, #6366f1, #10b981);
+//   transform: scaleX(0);
+//   transform-origin: left;
+//   transition: transform 0.3s ease;
+// }
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  // border-color: #10b981;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366f1, #10b981);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tech-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a5b4fc;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-badge {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #cbd5e1;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #10b981;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tech-card {
+    padding: 1.5rem;
   }
 }
