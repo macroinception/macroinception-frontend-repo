@@ -74,6 +74,15 @@ $container-padding: $spacing-2xl;
 // MIXINS
 // ============================================
 
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 @mixin container {
   max-width: $container-max;
   margin: 0 auto;
@@ -90,7 +99,7 @@ $container-padding: $spacing-2xl;
   border-radius: $radius-lg;
   border: 1px solid $color-border;
   transition: all $transition-base;
-  // slider fix
+  backdrop-filter: blur(10px);
   min-height: 350px;
   @media (max-width: 640px) {
     min-height: 20px;
@@ -169,17 +178,141 @@ html {
 body {
   font-family: $font-family;
   color: $color-text-primary;
-  background: $gradient-bg;
+  background: $color-bg-primary;
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+// ============================================
+// ANIMATED BACKGROUND
+// ============================================
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  // Gradient overlay for depth and text readability
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.85) 50%,
+      rgba(30, 41, 59, 0.95) 100%
+    );
+    z-index: 2;
+  }
+
+  // Animated gradient orbs
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+    animation: float 25s ease-in-out infinite;
+    will-change: transform;
+
+    @media (max-width: $breakpoint-md) {
+      display: none; // Hide on mobile for performance
+    }
+  }
+
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #6366f1, transparent);
+    top: -15%;
+    left: -10%;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #10b981, transparent);
+    top: 40%;
+    right: -10%;
+    animation-delay: -8s;
+  }
+
+  .orb-3 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #6366f1, transparent);
+    bottom: -20%;
+    left: 25%;
+    animation-delay: -16s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(60px, -60px) scale(1.05);
+    }
+    66% {
+      transform: translate(-40px, 40px) scale(0.95);
+    }
+  }
+
+  // Particle grid
+  .particle-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(99, 102, 241, 0.4);
+    border-radius: 50%;
+    animation: twinkle 4s ease-in-out infinite;
+
+    @media (max-width: $breakpoint-md) {
+      animation: none;
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.2);
+    }
+  }
 }
 
 // ============================================
@@ -405,7 +538,6 @@ section {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
-  // margin-bottom: $spacing-4xl;
 
   @media (max-width: $breakpoint-lg) {
     padding-left: $spacing-2xl;
@@ -647,6 +779,8 @@ footer {
   color: $color-text-muted;
   font-size: $font-size-sm;
   background: rgba(15, 23, 42, 0.8);
+  position: relative;
+  z-index: 10;
 
   p {
     margin: 0;
@@ -902,107 +1036,16 @@ footer {
     margin-bottom: $spacing-2xl;
   }
 }
+
 // ============================================
-// SWIPER CUSTOM STYLES (NEW SECTION)
+// SWIPER CUSTOM STYLES
 // ============================================
 
-// .caseSwiper {
-//   // Add horizontal padding so the arrows have room to sit *outside* the cards
-//   &.swiper {
-//     padding-top: 10px;
-//   }
-//   padding: $spacing-xl $spacing-4xl $spacing-3xl $spacing-4xl;
-//   position: relative; // needed for absolute arrows
-
-//   @media (max-width: $breakpoint-md) {
-//     padding-left: $spacing-2xl;
-//     padding-right: $spacing-2xl;
-//   }
-
-//   .swiper-wrapper {
-//     align-items: stretch; // cards stretch to same height
-//   }
-
-//   .swiper-slide {
-//     height: auto;
-//     display: flex;
-//   }
-
-//   /* ---------- ARROWS ---------- */
-//   .swiper-button-next,
-//   .swiper-button-prev {
-//     // Make them visible
-//     color: #10b981;
-//     background: rgba(30, 41, 59, 0.9);
-//     border: 2px solid $color-border-light;
-//     border-radius: 50%;
-//     width: 44px;
-//     height: 44px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     z-index: 10; // above everything
-//     top: 50%; // vertically centered
-//     transform: translateY(-50%);
-
-//     &:after {
-//       font-size: 1.2rem;
-//       font-weight: bold;
-//     }
-
-//     // Position **outside** the slider
-//     &.swiper-button-next {
-//       right: -22px;
-//     } // half of width
-//     &.swiper-button-prev {
-//       left: -22px;
-//     }
-
-//     @media (max-width: $breakpoint-md) {
-//       width: 36px;
-//       height: 36px;
-//       &.swiper-button-next {
-//         right: -18px;
-//       }
-//       &.swiper-button-prev {
-//         left: -18px;
-//       }
-//     }
-//   }
-
-//   /* ---------- PAGINATION ---------- */
-//   .swiper-pagination {
-//     bottom: 0;
-//     padding-bottom: $spacing-lg;
-//   }
-
-//   .swiper-pagination-bullet {
-//     background: #475569;
-//     opacity: 0.7;
-//     width: 10px;
-//     height: 10px;
-//     margin: 0 $spacing-xs;
-
-//     &-active {
-//       background: #10b981;
-//       opacity: 1;
-//     }
-//   }
-// }
-
-// Wrapper for the entire slider section - this is where arrows are positioned
 .caseSwiper-container {
-  padding: 0; // Space for arrows on desktop
-  position: relative; // Arrows positioned relative to this
+  padding: 0;
+  position: relative;
   overflow: visible;
 
-  // @media (max-width: $breakpoint-md) {
-  //   padding: 0 50px;
-  // }
-
-  // @media (max-width: $breakpoint-sm) {
-  //   padding: 0 10px;
-  // }
   .swiper-button-next,
   .swiper-button-prev {
     position: absolute;
@@ -1088,7 +1131,7 @@ footer {
 .caseSwiper {
   &.swiper {
     padding-top: 10px;
-    overflow: hidden; // Constrain slides
+    overflow: hidden;
   }
   padding: $spacing-xl 0 $spacing-3xl 0;
   position: relative;
@@ -1107,7 +1150,6 @@ footer {
   }
 }
 
-/* ---------- PAGINATION ---------- */
 .swiper-pagination {
   bottom: 0;
   padding-bottom: $spacing-lg;
@@ -1134,7 +1176,10 @@ footer {
     border-radius: 5px;
   }
 }
-// responsive header-------------------------------------
+
+// ============================================
+// RESPONSIVE HEADER
+// ============================================
 
 .navbar {
   display: flex;
@@ -1160,10 +1205,7 @@ footer {
     display: flex;
     align-items: center;
     gap: $spacing-md;
-    // text-decoration: none;
-    // color: $color-text-primary;
-    // z-index: 1001;
-    flex-shrink: 0; // Prevent logo from shrinking
+    flex-shrink: 0;
     width: 132px;
     height: 88px;
     img {
@@ -1203,7 +1245,7 @@ footer {
 
     div {
       @media (max-width: 500px) {
-        display: none; // Hide text on very small screens
+        display: none;
       }
     }
 
@@ -1230,13 +1272,11 @@ footer {
     }
   }
 
-  // Desktop Navigation - Responsive until breakpoint
   nav {
     display: flex;
     gap: $spacing-2xl;
     align-items: center;
 
-    // Gradually reduce gap as screen shrinks
     @media (max-width: $breakpoint-xl) {
       gap: $spacing-xl;
     }
@@ -1249,7 +1289,6 @@ footer {
       gap: $spacing-md;
     }
 
-    // Switch to mobile menu at 850px
     @media (max-width: 850px) {
       position: fixed;
       top: 0;
@@ -1290,7 +1329,6 @@ footer {
       white-space: nowrap;
       font-size: $font-size-sm;
 
-      // Reduce font size on smaller screens
       @media (max-width: $breakpoint-xl) {
         font-size: $font-size-sm;
         padding: $spacing-sm $spacing-sm;
@@ -1301,7 +1339,6 @@ footer {
         padding: $spacing-xs $spacing-sm;
       }
 
-      // Mobile menu styles
       @media (max-width: 850px) {
         font-size: 1.2rem;
         padding: $spacing-md 0;
@@ -1367,13 +1404,12 @@ footer {
         }
 
         &::after {
-          display: none; // Remove active indicator from CTA
+          display: none;
         }
       }
     }
   }
 
-  // Burger Menu Button - appears at 850px
   .burger {
     display: none;
     flex-direction: column;
@@ -1399,7 +1435,6 @@ footer {
 
     &.active {
       span:nth-child(1) {
-        // transform: rotate(45deg) translate(7px, 7px);
         transform: rotate(45deg) translate(3px, 5px);
       }
 
@@ -1415,7 +1450,6 @@ footer {
   }
 }
 
-// Overlay for mobile menu
 .nav-overlay {
   display: none;
   position: fixed;
@@ -1440,7 +1474,11 @@ footer {
     }
   }
 }
-// services tech stack
+
+// ============================================
+// TECH STACK SECTION
+// ============================================
+
 .tech-stack-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -1488,22 +1526,8 @@ footer {
   transition: all 0.3s ease;
 }
 
-// .tech-card::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   height: 3px;
-//   background: linear-gradient(90deg, #6366f1, #10b981);
-//   transform: scaleX(0);
-//   transform-origin: left;
-//   transition: transform 0.3s ease;
-// }
-
 .tech-card:hover {
   transform: translateY(-8px);
-  // border-color: #10b981;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -1573,5 +1597,243 @@ footer {
 
   .tech-card {
     padding: 1.5rem;
+  }
+}
+// Add this to the ANIMATED BACKGROUND section of your existing style.scss
+// Replace the entire .animated-bg section with this enhanced version
+
+// ============================================
+// ENHANCED ANIMATED BACKGROUND
+// ============================================
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  // Gradient overlay for depth and text readability (slightly less opaque for more visibility)
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.92) 0%,
+      rgba(15, 23, 42, 0.85) 50%,
+      rgba(30, 41, 59, 0.92) 100%
+    );
+    z-index: 5;
+  }
+
+  // Grid overlay - NEW
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(99, 102, 241, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    opacity: 0.5;
+    animation: gridPulse 8s ease-in-out infinite;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  @keyframes gridPulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  // Animated gradient orbs - MORE VISIBLE
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18; // Increased from 0.12
+    animation: float 20s ease-in-out infinite;
+    will-change: transform;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.8), transparent);
+    top: -15%;
+    left: -10%;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.8), transparent);
+    top: 40%;
+    right: -10%;
+    animation-delay: -7s;
+  }
+
+  .orb-3 {
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.6), transparent);
+    bottom: -20%;
+    left: 25%;
+    animation-delay: -14s;
+  }
+
+  .orb-4 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.5), transparent);
+    top: 60%;
+    left: -5%;
+    animation-delay: -10s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(60px, -60px) scale(1.08);
+    }
+    66% {
+      transform: translate(-40px, 40px) scale(0.92);
+    }
+  }
+
+  // Connection lines container - NEW
+  .connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(99, 102, 241, 0.3),
+      transparent
+    );
+    animation: moveLine 15s linear infinite;
+    opacity: 0.4;
+  }
+
+  @keyframes moveLine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  // Enhanced particle grid - MORE VISIBLE
+  .particle-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .particle {
+    position: absolute;
+    background: rgba(99, 102, 241, 0.8); // Increased opacity
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  // Different particle sizes for depth - NEW
+  .particle.small {
+    width: 2px;
+    height: 2px;
+  }
+
+  .particle.medium {
+    width: 3px;
+    height: 3px;
+  }
+
+  .particle.large {
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.6);
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.2; // More visible minimum
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1; // Full brightness at peak
+      transform: scale(1.3);
+    }
+  }
+
+  // Glow spots - NEW
+  .glow-spot {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent);
+    filter: blur(40px);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.2);
+    }
   }
 }
