@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Real-world AI implementations – case studies showcasing our expertise in production AI systems."
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+
+    <!-- PNG favicons (various sizes) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+
+    <!-- Apple Touch Icon (iOS home screen) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+
+    <!-- Android Chrome M39+ (adaptive icons) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/android-chrome-512x512.png"
+    />
+    <title>Case Studies | MacroInception.ai</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper CSS (lightweight, CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" alt="" />
+      </a>
+
+      <!-- Burger Menu Button -->
+      <button class="burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html" class="active">Case Studies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="nav-overlay"></div>
+
+    <main>
+      <!-- ==================== HERO ==================== -->
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Proven Results in AI Systems Engineering</h2>
+          <p>
+            Explore our real-world implementations that demonstrate how we help
+            businesses scale AI infrastructure, optimize performance, and
+            achieve measurable outcomes.
+          </p>
+          <div class="hero-buttons">
+            <a href="contact.html" class="btn-primary">Discuss Your Project</a>
+            <a href="services.html" class="btn-outline">View Services</a>
+          </div>
+        </div>
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop"
+          alt="Success Metrics"
+        />
+      </section>
+
+      <!-- ==================== FEATURED CASE STUDIES ==================== -->
+      <section id="case-studies" class="case-studies">
+        <h3>Featured Case Studies</h3>
+        <p>
+          These projects highlight our expertise in building scalable,
+          high-performance AI systems across industries.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h4>Real-time Multimodal Search</h4>
+            <p>FinTech Client - Document Discovery Platform</p>
+            <ul>
+              <li>Vector DB with disk-based index for 1B+ vectors</li>
+              <li>Triton + dynamic batching achieving sub-200ms latency</li>
+              <li>Multi-model ensemble for text and image embeddings</li>
+              <li>Cost reduced by 40% vs managed solutions</li>
+              <li>99.9% uptime serving 10K+ concurrent queries</li>
+            </ul>
+            <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem">
+              Outcome: Improved search accuracy by 35% and reduced operational
+              costs significantly.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Enterprise LLM Assistant</h4>
+            <p>Fortune 500 Technology Company</p>
+            <ul>
+              <li>vLLM + Triton deployment with continuous batching</li>
+              <li>Custom policy-driven multi-agent orchestration</li>
+              <li>Fine-tuned Smol-LLM for domain-specific tasks</li>
+              <li>Handles 100+ concurrent users seamlessly</li>
+              <li>Reduced response latency by 60% vs baseline</li>
+            </ul>
+            <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem">
+              Outcome: Enhanced employee productivity with AI-driven assistance,
+              scaling to enterprise levels.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Video Analytics Pipeline</h4>
+            <p>Retail Chain - 500+ Store Locations</p>
+            <ul>
+              <li>Distributed PySpark processing 70M frames daily</li>
+              <li>YOLOv8 model pruning + TensorRT optimization</li>
+              <li>Real-time inventory tracking and heatmap analytics</li>
+              <li>Edge deployment across 500+ locations</li>
+              <li>90% reduction in processing latency</li>
+            </ul>
+            <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem">
+              Outcome: Optimized inventory management and customer insights,
+              leading to 25% efficiency gains.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== MORE SUCCESS STORIES (SLIDER) ==================== -->
+      <section>
+        <h3>More Success Stories</h3>
+        <p>
+          Additional examples of how we’ve transformed AI challenges into
+          scalable solutions.
+        </p>
+
+        <!-- Swiper Container -->
+        <div class="caseSwiper-container">
+          <div class="swiper caseSwiper">
+            <div class="swiper-wrapper">
+              <!-- ==== ORIGINAL CARDS ==== -->
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>Distributed Data Pipeline for Healthcare</h4>
+                  <p>Healthcare Provider - Patient Data Analysis</p>
+                  <ul>
+                    <li>
+                      PySpark pipeline for processing petabyte-scale datasets
+                    </li>
+                    <li>
+                      Kubernetes orchestration for fault-tolerant computing
+                    </li>
+                    <li>
+                      H&amp;E-stained slide imaging with whole-slide digital
+                      pathology for tissue analysis
+                    </li>
+                    <li>
+                      4-5 channel multi-spectral analysis (H&amp;E + IHC
+                      biomarkers) for enhanced feature extraction
+                    </li>
+                    <li>
+                      Real-time anomaly detection in patient records, including
+                      AI-driven disease detection in histopathological images
+                    </li>
+                    <li>Reduced data processing time from days to hours</li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Accelerated insights for better patient care and
+                    operational efficiency.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>RAG System for Legal Research</h4>
+                  <p>Law Firm - Document Retrieval Platform</p>
+                  <ul>
+                    <li>
+                      Advanced chunking and embedding strategies for legal
+                      documents
+                    </li>
+                    <li>
+                      Billion-scale search with disk-based vectorDB supporting
+                      1B+ embeddings
+                    </li>
+                    <li>
+                      Integration with multiple vector stores (in-memory + disk
+                      hybrid indexing)
+                    </li>
+                    <li>
+                      LLM fine-tuning on proprietary case law and statutes for
+                      domain accuracy
+                    </li>
+                    <li>
+                      Query optimization with hybrid search (vector + keyword)
+                      reducing false positives by 50%
+                    </li>
+                    <li>
+                      Secure API deployment with role-based access controls and
+                      audit logging
+                    </li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Enabled sub-second retrieval across a
+                    billion-document legal corpus, cutting research time by 70%.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>Computer Vision for Manufacturing</h4>
+                  <p>Manufacturing Company - Quality Control System</p>
+                  <ul>
+                    <li>Custom CNN models for defect detection</li>
+                    <li>Edge deployment on industrial hardware</li>
+                    <li>Real-time processing at 60 FPS</li>
+                    <li>Integration with production line APIs</li>
+                    <li>99% accuracy in defect identification</li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Reduced waste by 30% and improved product quality.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==== NEW AUDIO CARD ==== -->
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>Audio Intelligence Platform</h4>
+                  <p>Media & Broadcasting Company - Content Analysis</p>
+                  <ul>
+                    <li>
+                      Real-time speaker diarization for multi-speaker interviews
+                    </li>
+                    <li>
+                      Music-speech separation using advanced neural networks
+                    </li>
+                    <li>
+                      Mel spectrogram & audio spectrogram feature extraction
+                    </li>
+                    <li>
+                      Automated silence remover for podcast post-production
+                    </li>
+                    <li>
+                      High-dimensional audio music embeddings for similarity
+                      search
+                    </li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Reduced audio editing time by 70% and enabled
+                    intelligent content tagging.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==== NEW MODEL DEPLOYMENT CARD ==== -->
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>Production-Scale Model Deployment</h4>
+                  <p>AI Startup - Inference Infrastructure</p>
+                  <ul>
+                    <li>
+                      Production-scale deployment of 100+ models across GPU
+                      clusters
+                    </li>
+                    <li>
+                      Triton Inference Server with dynamic batching & model
+                      ensembling
+                    </li>
+                    <li>
+                      FastAPI gateway with rate limiting and authentication
+                    </li>
+                    <li>vLLM for high-throughput LLM serving</li>
+                    <li>
+                      Model optimization using ONNX, TensorRT, optimum
+                      threading, and dynamic batching
+                    </li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Achieved 5x throughput and 60% cost savings in GPU
+                    utilization.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==== NEW AGENTIC AI CARD ==== -->
+              <div class="swiper-slide">
+                <div class="card">
+                  <h4>Agentic AI Automation Suite</h4>
+                  <p>Enterprise Client - Workflow Automation</p>
+                  <ul>
+                    <li>
+                      Automation under AI using tool modeling and decision trees
+                    </li>
+                    <li>
+                      Function calling orchestration across 50+ internal APIs
+                    </li>
+                    <li>
+                      Multi-agent system for report generation and approvals
+                    </li>
+                    <li>Dynamic task routing based on context and priority</li>
+                    <li>Self-healing workflows with fallback strategies</li>
+                  </ul>
+                  <p
+                    style="
+                      margin-top: 1.5rem;
+                      color: #94a3b8;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Outcome: Automated 80% of manual workflows, saving 1,200+
+                    hours monthly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation arrows -->
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- Pagination dots (optional) -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!-- ==================== CTA ==================== -->
+      <section class="text-center">
+        <h3>Ready to Become Our Next Success Story?</h3>
+        <p>
+          Contact us to discuss how we can tailor our expertise to your unique
+          challenges.
+        </p>
+        <div
+          class="hero-buttons"
+          style="margin-top: 2rem; display: flex; justify-content: center"
+        >
+          <a href="contact.html" class="btn-primary">Get Started</a>
+          <a href="pricing.html" class="btn-outline" style="margin-left: 1rem">
+            View Pricing
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 macroinception.ai – AI · Scale · Systems</p>
+    </footer>
+
+    <!-- Swiper JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Slider initialization -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

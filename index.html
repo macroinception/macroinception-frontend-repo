@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MacroInception.ai – AI, Scale, and Systems engineering for enterprises."
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+
+    <!-- PNG favicons (various sizes) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+
+    <!-- Apple Touch Icon (iOS home screen) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+
+    <!-- Android Chrome M39+ (adaptive icons) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/android-chrome-512x512.png"
+    />
+    <title>MacroInception.ai | AI · Scale · Systems</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" alt="" />
+      </a>
+
+      <!-- Burger Menu Button -->
+      <button class="burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="nav-overlay"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-text">
+          <h2>
+            Build, scale, and deploy AI systems that move your business forward
+          </h2>
+          <p>
+            We design production-grade AI, distributed compute, and API
+            platforms – from model training and optimization to Triton & vLLM
+            deployments, and scalable vector databases with disk-based indices.
+          </p>
+          <div class="hero-buttons">
+            <a href="contact.html" class="btn-primary">Get a Consultation</a>
+            <a href="case-studies.html" class="btn-outline"
+              >View Case Studies</a
+            >
+          </div>
+        </div>
+        <img
+          class="hero-img"
+          src="assets/hero1.webp"
+          alt="AI Systems Infrastructure"
+        />
+      </section>
+
+      <!-- Services Overview -->
+      <section id="services" class="services">
+        <h3>Our Services</h3>
+        <p>
+          From prototyping to production, we provide end-to-end solutions
+          tailored for high-performance AI systems.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h4>AI Systems & Model Engineering</h4>
+            <ul>
+              <li>
+                Objective Specfive AI Model training , LLMs fine-tuning +
+                instruction tuning
+              </li>
+              <li>Agentic AI & automation workflows</li>
+              <li>Computer Vision, NLP, Audio pipelines</li>
+              <li>Custom model architectures</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Deployment & Inference</h4>
+            <ul>
+              <li>Triton & vLLM deployment optimization</li>
+              <li>FastAPI & scalable API gateways</li>
+              <li>Dynamic batching & optimized threading</li>
+              <li>Load balancing & GPU orchestration</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Big Data & Distributed Compute</h4>
+            <ul>
+              <li>PySpark & distributed ETL pipelines</li>
+              <li>Kubernetes & container orchestration</li>
+              <li>Data pipelines for billion-row datasets</li>
+              <li>Real-time streaming architectures</li>
+              <li>model optimization and quantization</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="number">50+</span>
+            <span class="label">Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="number">99.9%</span>
+            <span class="label">Uptime Achieved</span>
+          </div>
+          <div class="stat">
+            <span class="number">40%</span>
+            <span class="label">Average Cost Reduction</span>
+          </div>
+          <div class="stat">
+            <span class="number">200ms</span>
+            <span class="label">Average Latency</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Case Studies -->
+      <section id="case-studies" class="case-studies">
+        <h3>Featured Case Studies</h3>
+        <p>
+          Real-world implementations demonstrating our expertise in AI
+          infrastructure and systems engineering.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h4>Real-time Multimodal Search</h4>
+
+            <ul>
+              <li>Vector DB with disk-based index for 1B+ vectors</li>
+              <li>Triton + dynamic batching achieving sub-200ms latency</li>
+              <li>Multi-model ensemble for text and image embeddings</li>
+              <li>Cost reduced by 40% vs managed solutions</li>
+              <li>99.9% uptime serving 10K+ concurrent queries</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Enterprise LLM Assistant</h4>
+            <ul>
+              <li>vLLM + Triton deployment with GPU pooling</li>
+              <li>Custom policy-driven multi-agent orchestration</li>
+              <li>Fine-tuned Llama 2 70B with domain-specific data</li>
+              <li>Handles 10K+ concurrent users seamlessly</li>
+              <li>Reduced response latency by 60% vs baseline</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Video Analytics Pipeline</h4>
+            <ul>
+              <li>Distributed PySpark processing 1M+ frames daily</li>
+              <li>YOLOv8 model pruning + TensorRT optimization</li>
+              <li>Real-time inventory tracking and heatmap analytics</li>
+              <li>Edge deployment across 500+ locations</li>
+              <li>90% reduction in processing latency</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="hero-buttons"
+          style="
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <a href="case-studies.html" class="btn-outline"
+            >View All Case Studies</a
+          >
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="about">
+        <h3>Why Choose MacroInception</h3>
+        <p>
+          We are a team of Data Scientists, ML Engineers, and full-stack
+          developers specializing in scalable AI infrastructure. We focus on
+          measurable results: faster inference, lower cost, higher accuracy, and
+          production reliability.
+        </p>
+
+        <div class="cards mt-lg">
+          <div class="card">
+            <h4>Production-First</h4>
+            <p>
+              Every solution is built for production from day one, with proper
+              monitoring, logging, and failover mechanisms.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Cost-Optimized</h4>
+            <p>
+              We optimize for both performance and cost, typically reducing
+              infrastructure costs by 30-50%.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Battle-Tested</h4>
+            <p>
+              Our solutions power systems handling billions of requests, with
+              proven reliability at scale.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="contact">
+        <h3>Ready to Transform Your AI Infrastructure?</h3>
+        <p>
+          Let's discuss how we can help scale your AI systems. Get a free
+          consultation to explore possibilities.
+        </p>
+
+        <form id="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Work Email" required />
+          <input type="text" placeholder="Company" />
+          <textarea
+            placeholder="Tell us about your project or challenge..."
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 macroinception.ai – AI · Scale · Systems</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thank you! We'll get in touch soon.");
+          form.reset();
+        });
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
