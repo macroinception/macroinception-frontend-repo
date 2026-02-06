@@ -47,6 +47,8 @@
     />
     <title>Contact Us | MacroInception.ai</title>
     <link rel="stylesheet" href="css/style.css" />
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body>
     <div id="particles-js"></div>
@@ -96,22 +98,25 @@
           Fill out the form below and we'll get back to you within 24 hours.
         </p>
 
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name *" required />
+        <form id="contact-form" onsubmit="handleFormSubmit(event, 'contact')">
+          <input type="text" id="contact-name" name="name" placeholder="Your Name *" required />
           <input
             type="email"
+            id="contact-email"
             name="email"
             placeholder="Work Email *"
             required
           />
-          <input type="text" name="company" placeholder="Company Name" />
+          <input type="text" id="contact-company" name="company" placeholder="Company Name" />
           <input
             type="tel"
+            id="contact-phone"
             name="phone"
             placeholder="Phone Number (optional)"
           />
 
           <select
+            id="contact-interest"
             name="interest"
             style="
               background: #1e293b;
@@ -133,6 +138,7 @@
           </select>
 
           <textarea
+            id="contact-message"
             name="message"
             placeholder="Tell us about your project, timeline, and any specific requirements... *"
             rows="6"
@@ -149,12 +155,12 @@
           >
             <input
               type="checkbox"
-              id="newsletter"
+              id="contact-newsletter"
               name="newsletter"
               style="width: auto; margin: 0"
             />
             <label
-              for="newsletter"
+              for="contact-newsletter"
               style="color: #cbd5e1; font-size: 0.9rem; margin: 0"
               >Send me updates about AI infrastructure best practices</label
             >
@@ -304,29 +310,8 @@
       <p>© 2025 macroinception.ai – AI · Scale · Systems</p>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("contact-form");
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-
-          // Get form data
-          const formData = new FormData(form);
-          const data = Object.fromEntries(formData);
-
-          // Show success message
-          alert(
-            "Thank you for your message! We'll get back to you within 24 hours."
-          );
-
-          // Reset form
-          form.reset();
-
-          // In production, you would send this data to your backend
-          console.log("Form submission:", data);
-        });
-      });
-    </script>
+    <!-- EmailJS Configuration -->
+    <script src="js/emailjs-config.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/particles-config.js"></script>
