@@ -1,124 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Get in touch with MacroInception.ai – Let's discuss your AI infrastructure needs."
-    />
-    <!-- FAVICONS -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
 
-    <!-- PNG favicons (various sizes) -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Get in touch with MacroInception.ai – Let's discuss your AI infrastructure needs." />
+  <!-- FAVICONS -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
 
-    <!-- Apple Touch Icon (iOS home screen) -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/apple-touch-icon.png"
-    />
+  <!-- PNG favicons (various sizes) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
 
-    <!-- Android Chrome M39+ (adaptive icons) -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/android-chrome-512x512.png"
-    />
-    <title>Contact Us | MacroInception.ai</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  </head>
-  <body>
-    <div id="particles-js"></div>
-    <header class="navbar">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.webp" alt="" />
-      </a>
+  <!-- Apple Touch Icon (iOS home screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 
-      <!-- Burger Menu Button -->
-      <button class="burger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Android Chrome M39+ (adaptive icons) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png" />
+  <title>Contact Us | MacroInception.ai</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="contact.html" class="cta">Contact</a>
-      </nav>
-    </header>
+<body>
+  <div id="particles-js"></div>
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.webp" alt="" />
+    </a>
 
-    <!-- Overlay for mobile menu -->
-    <div class="nav-overlay"></div>
+    <!-- Burger Menu Button -->
+    <button class="burger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-text">
-          <h2>Let's build something great together</h2>
-          <p>
-            Whether you're looking to prototype a new AI system, scale existing
-            infrastructure, or optimize performance, we're here to help. Reach
-            out for a free consultation.
-          </p>
-        </div>
-        <img class="hero-img" src="assets/contact.webp" alt="Communication" />
-      </section>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="cta">Contact</a>
+    </nav>
+  </header>
 
-      <!-- Contact Form -->
-      <section class="contact">
-        <h3>Send Us a Message</h3>
+  <!-- Overlay for mobile menu -->
+  <div class="nav-overlay"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Let's build something great together</h2>
         <p>
-          Fill out the form below and we'll get back to you within 24 hours.
+          Whether you're looking to prototype a new AI system, scale existing
+          infrastructure, or optimize performance, we're here to help. Reach
+          out for a free consultation.
         </p>
+      </div>
+      <img class="hero-img" src="assets/contact.webp" alt="Communication" />
+    </section>
 
-        <form id="contact-form" onsubmit="handleFormSubmit(event, 'contact')">
-          <input type="text" id="contact-name" name="name" placeholder="Your Name *" required />
-          <input
-            type="email"
-            id="contact-email"
-            name="email"
-            placeholder="Work Email *"
-            required
-          />
-          <input type="text" id="contact-company" name="company" placeholder="Company Name" />
-          <input
-            type="tel"
-            id="contact-phone"
-            name="phone"
-            placeholder="Phone Number (optional)"
-          />
+    <!-- Contact Form -->
+    <section class="contact">
+      <h3>Send Us a Message</h3>
+      <p>
+        Fill out the form below and we'll get back to you within 24 hours.
+      </p>
 
-          <select
-            id="contact-interest"
-            name="interest"
-            style="
+      <form id="contact-form" onsubmit="handleFormSubmit(event, 'contact')">
+        <input type="text" id="contact-name" name="name" placeholder="Your Name *" required />
+        <input type="email" id="contact-email" name="email" placeholder="Work Email *" required />
+        <input type="text" id="contact-company" name="company" placeholder="Company Name" />
+        <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number (optional)" />
+
+        <select id="contact-interest" name="interest" style="
               background: #1e293b;
               border: 2px solid #334155;
               color: #fff;
@@ -126,194 +88,197 @@
               border-radius: 6px;
               font-size: 1rem;
               font-family: 'Poppins', sans-serif;
-            "
-          >
-            <option value="">What are you interested in? *</option>
-            <option value="consultation">Free Consultation</option>
-            <option value="project">Project Quote</option>
-            <option value="retainer">Retainer Engagement</option>
-            <option value="training">Training & Workshops</option>
-            <option value="support">Support & Maintenance</option>
-            <option value="other">Other</option>
-          </select>
+            ">
+          <option value="">What are you interested in? *</option>
+          <option value="consultation">Free Consultation</option>
+          <option value="project">Project Quote</option>
+          <option value="retainer">Retainer Engagement</option>
+          <option value="training">Training & Workshops</option>
+          <option value="support">Support & Maintenance</option>
+          <option value="other">Other</option>
+        </select>
 
-          <textarea
-            id="contact-message"
-            name="message"
-            placeholder="Tell us about your project, timeline, and any specific requirements... *"
-            rows="6"
-            required
-          ></textarea>
+        <textarea id="contact-message" name="message"
+          placeholder="Tell us about your project, timeline, and any specific requirements... *" rows="6"
+          required></textarea>
 
-          <div
-            style="
+        <div style="
               display: flex;
               align-items: center;
               gap: 0.75rem;
               margin: 1rem 0;
-            "
-          >
-            <input
-              type="checkbox"
-              id="contact-newsletter"
-              name="newsletter"
-              style="width: auto; margin: 0"
-            />
-            <label
-              for="contact-newsletter"
-              style="color: #cbd5e1; font-size: 0.9rem; margin: 0"
-              >Send me updates about AI infrastructure best practices</label
-            >
-          </div>
-
-          <button type="submit">Send Message</button>
-
-          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 1rem">
-            By submitting this form, you agree to our privacy policy. We'll
-            never share your information.
-          </p>
-        </form>
-      </section>
-
-      <!-- Other Contact Methods -->
-      <section>
-        <h3>Other Ways to Reach Us</h3>
-
-        <div class="cards contact-cards">
-          <div class="card">
-            <h4>Email</h4>
-            <p style="color: #10b981; font-size: 1.125rem; margin: 1rem 0">
-              contact@macroinception.ai
-            </p>
-            <p>For general inquiries and project discussions</p>
-          </div>
-
-          <div class="card">
-            <h4>Schedule a Call</h4>
-            <p style="margin: 1rem 0">
-              Book a 30-minute discovery call to discuss your needs
-            </p>
-            <div
-              class="hero-buttons"
-              style="margin-top: 2rem; display: flex; justify-content: center"
-            >
-              <a
-                href="#"
-                class="btn-outline"
-                style="display: inline-block; margin-top: 0.5rem"
-                >Book a Call</a
-              >
-            </div>
-          </div>
-
-          <div class="card">
-            <h4>Response Time</h4>
-            <p style="margin: 1rem 0">
-              We typically respond within 24 hours on business days
-            </p>
-            <p style="color: #94a3b8; font-size: 0.9rem">
-              Urgent? Mark your message as high priority
-            </p>
-          </div>
+            ">
+          <input type="checkbox" id="contact-newsletter" name="newsletter" style="width: auto; margin: 0" />
+          <label for="contact-newsletter" style="color: #cbd5e1; font-size: 0.9rem; margin: 0">Send me updates about AI
+            infrastructure best practices</label>
         </div>
-      </section>
 
-      <!-- FAQ -->
-      <section>
-        <h3>Before You Reach Out</h3>
-        <p>Quick answers to common questions.</p>
+        <button type="submit">Send Message</button>
 
-        <div class="cards">
-          <div class="card">
-            <h4>What information should I include?</h4>
-            <p>
-              Help us understand your project by sharing: your technical
-              requirements, timeline, budget range (if known), and any existing
-              infrastructure or constraints.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>Do you offer free consultations?</h4>
-            <p>
-              Yes! We offer a free 30-minute initial consultation to discuss
-              your needs and determine if we're a good fit.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>What's your typical project timeline?</h4>
-            <p>
-              Projects typically range from 6-20 weeks depending on complexity.
-              We'll provide a detailed timeline during our initial consultation.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>Do you work with startups?</h4>
-            <p>
-              Absolutely. We work with organizations of all sizes, from
-              early-stage startups to Fortune 500 companies.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>Can you sign an NDA?</h4>
-            <p>
-              Yes, we're happy to sign NDAs before discussing your project
-              details. Just let us know in your message.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>What if I'm not sure what I need?</h4>
-            <p>
-              No problem! Our consultation includes needs assessment and
-              recommendations. We'll help you identify the right approach.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Location & Availability -->
-      <section class="text-center">
-        <h3>We Work Globally</h3>
-        <p style="max-width: 600px; margin: 0 auto 2rem">
-          While our team is distributed across multiple time zones, we primarily
-          serve clients in North America, Europe, and Asia. We're flexible with
-          meeting times to accommodate your schedule.
+        <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 1rem">
+          By submitting this form, you agree to our privacy policy. We'll
+          never share your information.
         </p>
+      </form>
+    </section>
 
-        <div class="stats" style="max-width: 800px; margin: 0 auto">
-          <div
-            class="stats-grid"
-            style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))"
-          >
-            <div class="stat">
-              <span class="number" style="font-size: 2rem">24h</span>
-              <span class="label">Response Time</span>
-            </div>
-            <div class="stat">
-              <span class="number" style="font-size: 2rem">15+</span>
-              <span class="label">Time Zones</span>
-            </div>
-            <div class="stat">
-              <span class="number" style="font-size: 2rem">100%</span>
-              <span class="label">Remote-Friendly</span>
-            </div>
+    <!-- Other Contact Methods -->
+    <section>
+      <h3>Other Ways to Reach Us</h3>
+
+      <div class="cards contact-cards">
+        <div class="card">
+          <h4>Email</h4>
+          <p style="color: #10b981; font-size: 1.125rem; margin: 1rem 0">
+            contact@macroinception.ai
+          </p>
+          <p>For general inquiries and project discussions</p>
+        </div>
+
+        <div class="card">
+          <h4>Schedule a Call</h4>
+          <p style="margin: 1rem 0">
+            Book a 30-minute discovery call to discuss your needs
+          </p>
+          <div class="hero-buttons" style="margin-top: 2rem; display: flex; justify-content: center">
+            <a href="#" class="btn-outline" style="display: inline-block; margin-top: 0.5rem">Book a Call</a>
           </div>
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>© 2025 macroinception.ai – AI · Scale · Systems</p>
-    </footer>
+        <div class="card">
+          <h4>Response Time</h4>
+          <p style="margin: 1rem 0">
+            We typically respond within 24 hours on business days
+          </p>
+          <p style="color: #94a3b8; font-size: 0.9rem">
+            Urgent? Mark your message as high priority
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <!-- EmailJS Configuration -->
-    <script src="js/emailjs-config.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js"></script>
-  </body>
+    <!-- FAQ -->
+    <section>
+      <h3>Before You Reach Out</h3>
+      <p>Quick answers to common questions.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>What information should I include?</h4>
+          <p>
+            Help us understand your project by sharing: your technical
+            requirements, timeline, budget range (if known), and any existing
+            infrastructure or constraints.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Do you offer free consultations?</h4>
+          <p>
+            Yes! We offer a free 30-minute initial consultation to discuss
+            your needs and determine if we're a good fit.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>What's your typical project timeline?</h4>
+          <p>
+            Projects typically range from 6-20 weeks depending on complexity.
+            We'll provide a detailed timeline during our initial consultation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Do you work with startups?</h4>
+          <p>
+            Absolutely. We work with organizations of all sizes, from
+            early-stage startups to Fortune 500 companies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Can you sign an NDA?</h4>
+          <p>
+            Yes, we're happy to sign NDAs before discussing your project
+            details. Just let us know in your message.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>What if I'm not sure what I need?</h4>
+          <p>
+            No problem! Our consultation includes needs assessment and
+            recommendations. We'll help you identify the right approach.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Availability -->
+    <section class="text-center">
+      <h3>We Work Globally</h3>
+      <p style="max-width: 600px; margin: 0 auto 2rem">
+        While our team is distributed across multiple time zones, we primarily
+        serve clients in North America, Europe, and Asia. We're flexible with
+        meeting times to accommodate your schedule.
+      </p>
+
+      <div class="stats" style="max-width: 800px; margin: 0 auto">
+        <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))">
+          <div class="stat">
+            <span class="number" style="font-size: 2rem">24h</span>
+            <span class="label">Response Time</span>
+          </div>
+          <div class="stat">
+            <span class="number" style="font-size: 2rem">15+</span>
+            <span class="label">Time Zones</span>
+          </div>
+          <div class="stat">
+            <span class="number" style="font-size: 2rem">100%</span>
+            <span class="label">Remote-Friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" alt="MacroInception" />
+        <p>AI infrastructure for enterprises</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h5>Services</h5>
+          <a href="services.html">AI Systems</a>
+          <a href="services.html">Deployment</a>
+          <a href="services.html">Infrastructure</a>
+        </div>
+        <div class="footer-column">
+          <h5>Company</h5>
+          <a href="about.html">About</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 MacroInception.ai</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS Configuration -->
+  <script src="js/emailjs-config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+</body>
+
 </html>

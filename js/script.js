@@ -513,4 +513,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start parallax animation (optional - remove if too much)
   applyParallax();
+
+  // ============================================
+  // TAB FUNCTIONALITY FOR SERVICES SECTION
+  // ============================================
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  if (tabButtons.length > 0) {
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active from all tabs and content
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active to clicked tab and corresponding content
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
 });
