@@ -1,15 +1,15 @@
 const EMAILJS_CONFIG = {
     // EmailJS Public Key (User ID)
-    USER_ID: "Lgn31CPd_UYIEgNFY",
+    USER_ID: "ZXdKcVICZh6GK1oo5",
 
     //EmailJS Service ID
-    SERVICE_ID: "service_bwr8gt9",
+    SERVICE_ID: "service_kgmh9cg",
 
     //EmailJS Template ID 
-    TEMPLATE_ID: "template_210gz6g",
+    TEMPLATE_ID: "template_lb4izyn",
 
     // Recipient email address - Where form submissions will be sent
-    RECIPIENT_EMAIL: "abdullahkhalid204606@gmail.com"
+    RECIPIENT_EMAIL: "official@macroinception.com"
 };
 
 // Initialize EmailJS
