@@ -101,9 +101,11 @@ $container-padding: $spacing-2xl;
   transition: all $transition-base;
   backdrop-filter: blur(10px);
   min-height: 350px;
+
   @media (max-width: 640px) {
     min-height: 20px;
   }
+
   justify-content: space-between;
 
   &:hover {
@@ -215,12 +217,10 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(15, 23, 42, 0.95) 0%,
-      rgba(15, 23, 42, 0.85) 50%,
-      rgba(30, 41, 59, 0.95) 100%
-    );
+    background: linear-gradient(to bottom,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(15, 23, 42, 0.85) 50%,
+        rgba(30, 41, 59, 0.95) 100%);
     z-index: 2;
   }
 
@@ -266,13 +266,16 @@ main {
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translate(0, 0) scale(1);
     }
+
     33% {
       transform: translate(60px, -60px) scale(1.05);
     }
+
     66% {
       transform: translate(-40px, 40px) scale(0.95);
     }
@@ -303,11 +306,13 @@ main {
   }
 
   @keyframes twinkle {
+
     0%,
     100% {
       opacity: 0.1;
       transform: scale(1);
     }
+
     50% {
       opacity: 0.6;
       transform: scale(1.2);
@@ -397,6 +402,7 @@ main {
   img {
     width: 50px;
   }
+
   display: flex;
   align-items: center;
   gap: $spacing-sm;
@@ -574,7 +580,7 @@ section {
     }
   }
 
-  > p {
+  >p {
     color: $color-text-secondary;
     font-size: $font-size-lg;
     max-width: 800px;
@@ -596,6 +602,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -786,11 +793,13 @@ footer {
     margin: 0;
   }
 }
+
 .contact-cards {
   .card {
     padding: 1rem;
   }
 }
+
 // ============================================
 // PAGE-SPECIFIC STYLES
 // ============================================
@@ -1010,11 +1019,13 @@ footer {
 
 .text-center {
   text-align: center;
+
   .btn-outline {
     @media (max-width: 640px) {
       margin-left: 0 !important;
     }
   }
+
   p {
     margin-left: auto;
     margin-right: auto;
@@ -1084,9 +1095,11 @@ footer {
 
   .swiper-button-next {
     right: -62px;
+
     @media (max-width: 1236px) {
       display: none;
     }
+
     @media (max-width: $breakpoint-md) {
       right: 5px;
       width: 44px;
@@ -1106,6 +1119,7 @@ footer {
 
   .swiper-button-prev {
     left: -62px;
+
     @media (max-width: 1236px) {
       display: none;
     }
@@ -1133,6 +1147,7 @@ footer {
     padding-top: 10px;
     overflow: hidden;
   }
+
   padding: $spacing-xl 0 $spacing-3xl 0;
   position: relative;
 
@@ -1207,7 +1222,8 @@ footer {
     gap: $spacing-md;
     flex-shrink: 0;
     width: 132px;
-    height: 88px;
+    height: 57px;
+
     img {
       height: 100%;
       width: 100%;
@@ -1310,6 +1326,7 @@ footer {
       &.active {
         right: 0;
       }
+
       a {
         padding: 0.7rem 18px !important;
       }
@@ -1513,11 +1530,9 @@ footer {
 }
 
 .tech-card {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 41, 59, 0.8),
-    rgba(30, 41, 59, 0.4)
-  );
+  background: linear-gradient(135deg,
+      rgba(30, 41, 59, 0.8),
+      rgba(30, 41, 59, 0.4));
   border: 1px solid #334155;
   border-radius: 16px;
   padding: 2rem;
@@ -1599,6 +1614,7 @@ footer {
     padding: 1.5rem;
   }
 }
+
 // Add this to the ANIMATED BACKGROUND section of your existing style.scss
 // Replace the entire .animated-bg section with this enhanced version
 
@@ -1623,12 +1639,10 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(15, 23, 42, 0.92) 0%,
-      rgba(15, 23, 42, 0.85) 50%,
-      rgba(30, 41, 59, 0.92) 100%
-    );
+    background: linear-gradient(to bottom,
+        rgba(15, 23, 42, 0.92) 0%,
+        rgba(15, 23, 42, 0.85) 50%,
+        rgba(30, 41, 59, 0.92) 100%);
     z-index: 5;
   }
 
@@ -1639,10 +1653,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-        rgba(99, 102, 241, 0.03) 1px,
-        transparent 1px
-      ),
+    background-image: linear-gradient(rgba(99, 102, 241, 0.03) 1px,
+        transparent 1px),
       linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     z-index: 1;
@@ -1655,10 +1667,12 @@ footer {
   }
 
   @keyframes gridPulse {
+
     0%,
     100% {
       opacity: 0.3;
     }
+
     50% {
       opacity: 0.6;
     }
@@ -1715,13 +1729,16 @@ footer {
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translate(0, 0) scale(1);
     }
+
     33% {
       transform: translate(60px, -60px) scale(1.08);
     }
+
     66% {
       transform: translate(-40px, 40px) scale(0.92);
     }
@@ -1744,12 +1761,10 @@ footer {
   .line {
     position: absolute;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(99, 102, 241, 0.3),
-      transparent
-    );
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(99, 102, 241, 0.3),
+        transparent);
     animation: moveLine 15s linear infinite;
     opacity: 0.4;
   }
@@ -1758,6 +1773,7 @@ footer {
     0% {
       transform: translateX(-100%);
     }
+
     100% {
       transform: translateX(200%);
     }
@@ -1798,11 +1814,13 @@ footer {
   }
 
   @keyframes twinkle {
+
     0%,
     100% {
       opacity: 0.2; // More visible minimum
       transform: scale(1);
     }
+
     50% {
       opacity: 1; // Full brightness at peak
       transform: scale(1.3);
@@ -1826,14 +1844,507 @@ footer {
   }
 
   @keyframes pulse {
+
     0%,
     100% {
       opacity: 0.3;
       transform: scale(1);
     }
+
     50% {
       opacity: 0.6;
       transform: scale(1.2);
     }
   }
+}
+
+// ============================================
+// NEW FOOTER STYLES
+// ============================================
+
+footer {
+  padding: $spacing-3xl $spacing-2xl;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.footer-content {
+  max-width: $container-max;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  margin-bottom: $spacing-2xl;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+}
+
+.footer-brand {
+  img {
+    height: 50px;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: $spacing-3xl;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+}
+
+.footer-column {
+  h5 {
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  a {
+    display: block;
+    color: $color-text-muted;
+    text-decoration: none;
+    font-size: $font-size-sm;
+    padding: $spacing-xs 0;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: #10b981;
+    }
+  }
+}
+
+.footer-bottom {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding-top: $spacing-xl;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: $spacing-md;
+    text-align: center;
+  }
+
+  p {
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  gap: $spacing-lg;
+
+  a {
+    color: $color-text-muted;
+    text-decoration: none;
+    font-size: $font-size-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: #10b981;
+    }
+  }
+}
+
+// ============================================
+// HERO ENHANCEMENTS
+// ============================================
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-eyebrow {
+  color: #10b981;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: $spacing-md;
+}
+
+.hero-title {
+  font-size: $font-size-4xl;
+  line-height: 1.1;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+  letter-spacing: -0.02em;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 2.25rem;
+  }
+}
+
+.gradient-text {
+  background: $gradient-logo;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  color: $color-text-secondary;
+  font-size: $font-size-lg;
+  line-height: 1.7;
+  margin-bottom: $spacing-xl;
+}
+
+.hero-cta {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ============================================
+// TRUST BAR STYLES
+// ============================================
+
+.trust-bar {
+  text-align: center;
+  padding: $spacing-2xl $spacing-xl;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  background: rgba(99, 102, 241, 0.05);
+  max-width: 100%;
+  margin: 0;
+
+  >p {
+    color: $color-text-muted;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+    margin: 0px auto 24px;
+  }
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-3xl;
+  flex-wrap: wrap;
+  max-width: $container-max;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-md) {
+    gap: $spacing-xl;
+  }
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.trust-stat {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: #10b981;
+}
+
+.trust-label {
+  color: $color-text-muted;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// ============================================
+// TABBED SERVICES STYLES
+// ============================================
+
+.services-tabbed {
+  padding: $spacing-3xl $spacing-2xl;
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.service-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  margin-bottom: $spacing-2xl;
+  margin-top: $spacing-xl;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    border-bottom: none;
+    gap: $spacing-xs;
+  }
+}
+
+.tab-btn {
+  padding: $spacing-md $spacing-xl;
+  background: transparent;
+  border: none;
+  color: $color-text-muted;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  position: relative;
+  transition: color $transition-fast;
+  font-family: $font-family;
+
+  &:hover {
+    color: $color-text-secondary;
+  }
+
+  &.active {
+    color: $color-text-primary;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #10b981;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 8px;
+    text-align: left;
+
+    &.active {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-3xl;
+  align-items: center;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.tab-info {
+  h4 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-accent;
+    margin-bottom: $spacing-md;
+  }
+
+  >p {
+    color: $color-text-secondary;
+    margin-bottom: $spacing-lg;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-xl 0;
+
+    li {
+      color: $color-text-secondary;
+      padding: $spacing-xs 0;
+      padding-left: $spacing-lg;
+      position: relative;
+      font-size: $font-size-sm;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.75rem;
+        width: 6px;
+        height: 6px;
+        background: #6366f1;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.tab-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: $spacing-2xl;
+  text-align: center;
+  min-width: 250px;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: $gradient-logo;
+  border-radius: $radius-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: #fff;
+  margin: 0 auto $spacing-lg;
+}
+
+.visual-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-highlight {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: #10b981;
+}
+
+.stat-desc {
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+}
+
+// ============================================
+// NUMBERED CARDS STYLES
+// ============================================
+
+.card.numbered {
+  position: relative;
+  padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-number {
+  position: absolute;
+  top: $spacing-lg;
+  left: $spacing-xl;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: #10b981;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.05em;
+}
+
+.card-subtitle {
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+  margin-bottom: $spacing-md;
+}
+
+.card-result {
+  margin-top: auto;
+  padding-top: $spacing-lg;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-label {
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.result-value {
+  color: #10b981;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+}
+
+// ============================================
+// SECTION CTA STYLES
+// ============================================
+
+.section-cta {
+  text-align: center;
+  margin-top: $spacing-2xl;
+}
+
+// ============================================
+// GLOBAL BUTTON STYLES
+// ============================================
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-outline {
+  @include button-outline;
 }

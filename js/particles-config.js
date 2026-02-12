@@ -1,6 +1,6 @@
 // ============================================
 // PARTICLES.JS CONFIGURATION
-// MacroInception.ai - Neural Network Theme
+// MacroInception.com - Neural Network Theme
 // ============================================
 
 // Mobile detection
@@ -327,5 +327,5 @@ console.log("✨ Particles.js initialized successfully!");
 console.log("Particle count:", particleCount);
 console.log(
   "Interactivity:",
-  interactivityEnabled ? "Enabled" : "Disabled (mobile)"
+  interactivityEnabled ? "Enabled" : "Disabled (mobile)",
 );
